@@ -6,3 +6,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.selector {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  height:40px;
+  font-weight: 500;
+  font-size:1.3rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
