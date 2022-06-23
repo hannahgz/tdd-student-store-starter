@@ -1,6 +1,7 @@
 .logo-pic {
-    width: 100px;
-    height: 100px;
-    z-index: 1;
+    width: 45px;
+    height: 45px;
+    z-index: 10;
     display: flex;
+    margin-left: 40px;
 }

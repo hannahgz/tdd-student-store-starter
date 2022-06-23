@@ -19,8 +19,8 @@ export default function App() {
   
   const [shoppingCart, setShoppingCart] = useState([])
   const [price, setPrice] = useState(0)
-  const [checkoutForm, setCheckoutForm] = useState(false)
-
+  const [checkoutForm, setCheckoutForm] = useState({email:"", name:""})
+  const [searchBar, setSearchBar] = useState("")
   const [isOpen, setIsOpen] = useState(false)
 
   async function getInfo() {
@@ -47,8 +47,6 @@ export default function App() {
   },[])
 
   const categories = ["All Categories", "food", "clothing", "accessories", "tech"]
-
-  if(!isFetching) {
 
     const currentItems = products.filter(item => {
       return (
@@ -90,47 +88,82 @@ export default function App() {
     }
 
     const handleOnCheckoutFormChange = (name, value) => {
-      setCheckoutForm(value)
+      console.log(value)
+      let copy = {}
+      if (name === "name") {
+        copy = {...checkoutForm, "name": value}
+      } else {
+        copy = {...checkoutForm, "email": value}
+      }
+
+      setCheckoutForm(copy);
     }
 
-    const handleOnSubmitCheckoutForm = (user, shoppingCart) => {
-      // need to pass data into the post request
-      axios.post(`https://codepath-store-api.herokuapp.com/store`,{}).then((response) => {
+    const handleOnSubmitCheckoutForm = (checkoutForm, shoppingCart) => {
+      if (shoppingCart.length == 0) {
+        console.log("no items in cart yet!");
+      }
+      axios.post('https://codepath-store-api.herokuapp.com/store',{'user': checkoutForm, 'shoppingCart': shoppingCart}).then((response) => {
         if (!response) {
           <p className="error">Sorry! Checkout form submission unsuccessful</p>
         } else {
+          <p className="success">Success!</p>
           setShoppingCart([])
-          setCheckoutForm(false)
+          setCheckoutForm({email:"", name:""})
         }
       });
-      
+    }
+
+    const handleOnSearchBarChange = (value) => {
+      setSearchBar(value)
     }
 
     return (
       <div className="app">
         <BrowserRouter>
           <main>
-            {/* YOUR CODE HERE! */}
-            <Navbar />
-            <Sidebar isOpen={isOpen}
-                     shoppingCart={shoppingCart}
-                     products={products}
-                     checkoutForm={checkoutForm}
-                     handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-                     handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-                     handleOnToggle={handleOnToggle}/>
+            <div className="top">
+              <Navbar />
+            </div>
+            
+            <div className="left">
+              <Sidebar isOpen={isOpen}
+                      shoppingCart={shoppingCart}
+                      products={products}
+                      checkoutForm={checkoutForm}
+                      handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                      handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                      handleOnToggle={handleOnToggle}/>
+            </div>
+            
             <Routes>
               <Route path="/" element={
+                <>
                 <div className="homepage">
                   <Home products={selectedCategory=="All Categories" ? products : currentItems}
                         selectedCategory={selectedCategory}
                         handleAddItemToCart={handleAddItemToCart}
                         handleRemoveItemFromCart={handleRemoveItemFromCart}
                         setSelectedCategory={setSelectedCategory}
+                        handleOnSearchBarChange={handleOnSearchBarChange}
                         categories={categories}
                         shoppingCart={shoppingCart}
+                        setIsFetching={setIsFetching}
+                        searchBar={searchBar}
+                        setSearchBar={setSearchBar}
                   />
                 </div>
+
+                <div className="about-us">
+                  <p>About us!</p>
+                </div>
+
+                <div className="contact-us">
+                  <p>Contact Us!</p>
+                </div>
+
+                </>
+                
                 
               }/>
 
@@ -140,7 +173,8 @@ export default function App() {
                                handleRemoveItemFromCart={handleRemoveItemFromCart}
                                isFetching={isFetching}
                                setIsFetching={setIsFetching}
-                               setError={setError}/>
+                               setError={setError}
+                              />
               } />
 
               <Route path="*" element={<NotFound />} />
@@ -151,9 +185,5 @@ export default function App() {
         </BrowserRouter>
       </div>
     )
-  } else {
-    return null
-  }
-  
 
 }

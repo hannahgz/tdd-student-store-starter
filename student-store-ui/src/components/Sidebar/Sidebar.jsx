@@ -14,7 +14,6 @@ export default function Sidebar(props) {
         props.isOpen ? 
         (<div className="sidebar-opened">
           <button className="toggle-button close" 
-                isActive={props.isOpen}
                 onClick={props.handleOnToggle}>
             <img src={Arrow} className="arrow-button close"></img>
           </button>
@@ -24,8 +23,8 @@ export default function Sidebar(props) {
           <CheckoutForm isOpen={props.isOpen}
                         shoppingCart={props.shoppingCart}
                         checkoutForm={props.checkoutForm}
-                        // handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-                        // handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                        handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
+                        handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
                         />
         </div>) 
         
@@ -33,8 +32,7 @@ export default function Sidebar(props) {
         <div className="sidebar-closed">
           <div className="button-wrapper">
             <button className="toggle-button open" 
-                  isActive={props.isOpen}
-                  onClick={props.handleOnToggle}>
+                    onClick={props.handleOnToggle}>
             <img src={Arrow} className="arrow-button open"></img>
             </button>
           </div>

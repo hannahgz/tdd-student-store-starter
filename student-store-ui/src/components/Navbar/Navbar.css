@@ -1,7 +1,10 @@
 .navbar-container {
-    background: grey;
+    background: #274C77;
     display: flex; 
     flex-direction: row;
+    width: 97.5vw;
+    margin-left: auto;
+
 }
 
 .navbar-links {
@@ -13,7 +16,7 @@
     height:40px;
     font-weight: 500;
     font-size:1.3rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font:'Segoe UI';
     color: white;
 }
 

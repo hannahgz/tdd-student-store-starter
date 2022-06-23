@@ -15,19 +15,9 @@ export default function Navbar() {
           })
         }
         </div>
-        <SearchBar />
       </div>
     </nav>
   )
 }
 
-
-export function SearchBar() {
-  return (
-    <div className="search-bar">
-      <input placeholder="Search Twitter" />
-      <i className="fas fa-search"></i>
-    </div>
-  )
-}
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css"
-import Store from "./shops.png"
+import Store from "./shops.svg"
 
 export default function Hero(props) {
     return (
@@ -16,7 +16,7 @@ export default function Hero(props) {
                     className="hero-img" alt="hero"></img>
                 </div>
             </div>
-            <div classname="hero-bottom-wrapper">
+            <div className="hero-bottom-wrapper">
                 <p className="description"> 
                     We have all kinds of goodies. Click on any of the items below to get started <br />
                     and fill up your shopping cart. Checkout on the sidebar whenever you are ready!

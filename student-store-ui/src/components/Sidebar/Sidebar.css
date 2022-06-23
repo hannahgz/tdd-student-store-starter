@@ -1,6 +1,7 @@
 .sidebar-opened {
     width:450px;
-    background-color: #2c4047;
+    background-color: #274C77;
+    opacity: 95%;
     z-index: 1;
     color: white;
     position: fixed; 
@@ -11,8 +12,8 @@
 }
 
 .sidebar-closed {
-    width:50px;
-    background-color: #2c4047;
+    width:60px;
+    background-color: #274C77;
     z-index: 1;
     color: white;
     position: fixed; 
@@ -31,11 +32,13 @@
 .arrow-button {
     width:40px;
     height:40px;
+    margin-right: 5px;
 }
 .arrow-button.open{
     transform: rotateY(180deg);
     align-items: center;
     display: flex;
+    top: 20px;
 }
 
 .arrow-button.close {

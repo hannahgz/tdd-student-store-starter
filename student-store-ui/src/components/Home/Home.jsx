@@ -3,11 +3,15 @@ import "./Home.css"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import Selector from "../Selector/Selector"
 import Hero from "../Hero/Hero"
+import SearchBar from "../SearchBar/SearchBar"
 
 export default function Home(props) {
   return (
     <div className="home">
       <Hero />
+      <SearchBar handleOnSearchBarChange={props.handleOnSearchBarChange}
+                 setSearchBar={props.setSearchBar}
+                 products={props.products}/>
 
       <div className="selector">
         {props.categories.map((category) => 
@@ -22,9 +26,12 @@ export default function Home(props) {
       <ProductGrid products={props.products}
                    handleAddItemToCart={props.handleAddItemToCart}
                    handleRemoveItemFromCart={props.handleRemoveItemFromCart}
-                   shoppingCart={props.shoppingCart} />
+                   shoppingCart={props.shoppingCart}
+                   setIsFetching={props.setIsFetching}
+                   searchBar={props.searchBar} />
 
     </div>
 
   )
 }
+

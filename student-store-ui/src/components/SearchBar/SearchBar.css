@@ -1,0 +1,26 @@
+.search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.img-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #A3CEF1;
+    display: flex;
+}
+.search-img {
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-bar {
+    display: flex;
+}
