@@ -3,6 +3,7 @@ import "./Navbar.css"
 import Logo from "../Logo/Logo"
 
 const navbarTitles = ["Home", "About Us", "Contact Us", "Buy Now"]
+let link = ""
 export default function Navbar() {
   return (
     <nav>
@@ -11,7 +12,19 @@ export default function Navbar() {
         <div className="navbar-links">
         {
           navbarTitles.map((title) => {
-            return <p className="item">{title}</p>
+            if (title == "About Us") {
+              return <p className="item">
+              <a className="anchor" href={"#about-us"}>{title}</a>
+              </p>
+            } else if(title == "Contact Us") {
+              return <p className="item">
+              <a className="anchor" href={"#contact-us"}>{title}</a>
+              </p>
+            } else {
+              return <p className="item">
+              {title}</p>
+            }
+            
           })
         }
         </div>

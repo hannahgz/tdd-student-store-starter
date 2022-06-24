@@ -3,7 +3,6 @@ import "./ProductCard.css"
 import { Link } from "react-router-dom"
 
 export default function ProductCard(props) {
-    console.log(props.showDescrpition)
     return (
 
       <div className="product-card">

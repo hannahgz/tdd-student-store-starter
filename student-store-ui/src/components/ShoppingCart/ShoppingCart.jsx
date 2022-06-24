@@ -38,21 +38,21 @@ export default function ShoppingCart({isOpen, products, shoppingCart}) {
                     
                     
                     <div class = "cum-results">
-                        <div class="receipt">
+                        <div className="receipt">
                             <span className="subtotal">Subtotal</span>
                             <span></span>
                             <span></span>
                             <span>${subtotal.toFixed(2)}</span>
                         </div>
 
-                        <div class="taxes">
+                        <div className="taxes">
                             <span className="subtotal">Taxes and Fees</span>
                             <span></span>
                             <span></span>
                             <span>${taxes.toFixed(2)}</span>
                         </div>
 
-                        <div class="total-price">
+                        <div className="total-price">
                             <span className="subtotal">Total Price</span>
                             <span></span>
                             <span></span>

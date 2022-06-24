@@ -14,9 +14,6 @@ export default function ProductGrid(props) {
                     let quantity = 0;
                     
                     if (typeof props.shoppingCart != 'undefined') {
-                        console.log(currProduct.name)
-                        console.log("search bar")
-                        console.log(props.searchBar)
                         let currItem = props.shoppingCart.find(cart => cart["itemId"] === currProduct.id);
                             if (typeof currItem != 'undefined') {
                                 quantity = currItem["quantity"];

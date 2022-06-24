@@ -10,15 +10,22 @@ import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
 
+import LogoPic from "./logo-pic.svg"
+
 export default function App() {
-  const [data, setData] = useState(0)
-  const [products, setSelectedProducts] = useState([])
+  // STATE VARIABLES
+
+  // Page rendering and data fetching
   const [isFetching, setIsFetching] = useState(true)
-  const [selectedCategory, setSelectedCategory] = useState("All Categories")
+  const [data, setData] = useState(0)
   const [error, setError] = useState(false)
-  
+
+  // All products sourced from data 
+  const [products, setSelectedProducts] = useState([])
+
+  const [selectedCategory, setSelectedCategory] = useState("All Categories")
+
   const [shoppingCart, setShoppingCart] = useState([])
-  const [price, setPrice] = useState(0)
   const [checkoutForm, setCheckoutForm] = useState({email:"", name:""})
   const [searchBar, setSearchBar] = useState("")
   const [isOpen, setIsOpen] = useState(false)
@@ -154,14 +161,37 @@ export default function App() {
                   />
                 </div>
 
-                <div className="about-us">
-                  <p>About us!</p>
+                <div className="about-us" id="about-us">
+                  <h3>ABOUT US</h3>
+                  <div className="about-us-wrapper">
+                    <div className="summary">
+                      <p className="summary-text">The codepath student store offers great products at great prices from a great team and for a great cause.</p>
+                      <p className="summary-text">We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.</p>
+                      <p className="summary-text">All proceeds go towards bringing high quality CS education to college students around the country.</p>
+                    </div>
+
+                    <div className="about-image">
+                      <img src={LogoPic} className="about-logo"></img>
+                    </div>
+                  </div>
+                  
                 </div>
 
-                <div className="contact-us">
-                  <p>Contact Us!</p>
+                <div className="contact-us" id="contact-us">
+                  <h3>CONTACT US</h3>
+                  <div className="contact-us-wrapper">
+                    <p>Phone Number: (123) 456-7890</p>
+                    <p>Email: test@codepath.org</p>
+                    <p>Address: 123 Fake Address, San Francisco, CA</p>
+                  </div>
+                  
                 </div>
-
+                
+                <footer className="footer">
+                  <div className="footer-wrapper">
+                    <h3>FOOTER INFO</h3>
+                  </div>
+                </footer>
                 </>
                 
                 

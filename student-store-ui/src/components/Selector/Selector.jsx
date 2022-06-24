@@ -3,11 +3,12 @@ import * as React from "react"
 import "./Selector.css"
 
 export default function Selector(props) {
-    let buttonClassName = props.isActive ? "selector active": "selector";
+    let buttonClassName = props.isActive ? "my-label active": "my-label";
+    console.log(buttonClassName);
     return (
         <div className="category-menu">
             <button className={buttonClassName} onClick={props.onClick}>
-                <p className="my-label">{(capitalizeFirst(props.label)).toUpperCase()} </p>
+                <p className={buttonClassName}>{(capitalizeFirst(props.label)).toUpperCase()} </p>
             </button>
         </div>
         

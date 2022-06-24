@@ -20,6 +20,12 @@
     color: white;
 }
 
+.anchor {
+    text-decoration: none;
+    color: white;
+}
+
 .item {
     padding:10px;
 }
+
