@@ -269,7 +269,8 @@ Overall, the project demo went pretty well besides some of the small styling ele
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- React Router DOM 
+- Axios 
 
 ### Shout out
 
