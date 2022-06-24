@@ -4,11 +4,7 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-<summmary>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_TCCgNVIlqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</summary>
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/26664975/175697373-d1f1f77c-cdc6-4d14-ae09-9cb15290eed3.gif)
 
 ### Application Features
 
@@ -259,7 +255,7 @@ If I had more time, I would have liked to add some additional styling specifical
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Overall, the project demo went pretty well besides some of the small styling elements that I mentioned above. One element that I was pretty pleased with was the implementation of the search bar. Last week during Flixster I didn't have time/didn't really know how to make a search bar that searched as the user typed, but this week using state variables and passing the proper variables in as props allowed the search results to update as the user typed. Another small element that I was happy with was the displaying of the quantity of each product on the product card. I struggled a lot with using the appropriate setter functions but I ultimately learned a lot more about how React operates on a deeper level.
+Overall, the project demo went pretty well besides some of the small styling elements that I mentioned above. One element that I was pretty pleased with was the implementation of the search bar. Last week during Flixster I didn't have time/didn't really know how to make a search bar that searched as the user typed, but this week using state variables and passing the proper variables in as props allowed the search results to update as the user typed. Another small element that I was happy with was the displaying of the quantity of each product on the product card. I struggled a lot with using the appropriate setter functions but I ultimately learned a lot more about how React operates on a deeper level. The experience gave me a lot more debugging experience and also furthered my willingness to ask for help as both my peers and TAs were so helpful in finding the ultimate error!
 
 ### Open-source libraries used
 
