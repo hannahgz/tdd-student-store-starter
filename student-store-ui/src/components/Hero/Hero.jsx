@@ -2,7 +2,11 @@ import React from "react";
 import "./Hero.css"
 import Store from "./shops.svg"
 
-export default function Hero(props) {
+/**
+ * 
+ * @returns intro message that renders header and welcome image 
+ */
+export default function Hero() {
     return (
         <div className="hero">
             <div className="hero-top-wrapper">

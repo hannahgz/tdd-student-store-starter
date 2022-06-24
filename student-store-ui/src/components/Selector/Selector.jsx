@@ -1,17 +1,20 @@
 import * as React from "react"
-// import AvatarIcon from "../AvatarIcon/AvatarIcon"
 import "./Selector.css"
 
+/**
+ * 
+ * @param {*} props 
+ * @returns Renders selector to iterate between different categories to toggle product grid
+ */
 export default function Selector(props) {
     let buttonClassName = props.isActive ? "my-label active": "my-label";
-    console.log(buttonClassName);
+
     return (
         <div className="category-menu">
             <button className={buttonClassName} onClick={props.onClick}>
                 <p className={buttonClassName}>{(capitalizeFirst(props.label)).toUpperCase()} </p>
             </button>
         </div>
-        
     )
   }
 

@@ -1,29 +1,42 @@
 import * as React from "react"
-import "./ProductDetail.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import ProductView from "../ProductView/ProductView"
-import ProductCard from "../ProductCard/ProductCard"
+
 import axios from "axios"
 
+import "./ProductDetail.css"
+import ProductView from "../ProductView/ProductView"
+import NotFound from "../NotFound/NotFound"
 
+
+/**
+ * 
+ * @param {*} props 
+ * @returns Makes requests to API and renders loading page
+ * Calls product view for product description
+ */
 export default function ProductDetail(props) {
     const [product, setProduct] = useState("");
+
+    // Extract productId parameter from the url
     let { productId } = useParams();
     let quantity = 0
     useEffect(() => {
-
+        // Makes axios get request to get individual product info
         async function getInfo() {
             props.setIsFetching(true)
-            const response = await axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`);
-            setProduct(response.data.product)
-            props.setIsFetching(false) 
+            await axios.get(`https://codepath-store-api.herokuapp.com/store/${productId}`).then((response) => {
+                setProduct(response.data.product)
+                props.setIsFetching(false) 
+            }).catch((error) => {
+                <NotFound />
+            });
         }
-
         getInfo()
       },[])
 
     if(props.isFetching) {
+        // Renders loading page if still fetching
         return (
             <div className="loading">
                 <h1>Loading...</h1>
@@ -31,11 +44,6 @@ export default function ProductDetail(props) {
         )
     }
     else {
-        // console.log(productId)
-        // console.log(props.shoppingCart)
-        // console.log(props.shoppingCart.find(item => {
-        //     return item.itemId == productId}).quantity);
-
         const currItem = props.shoppingCart.find(item => {
             return item.itemId == productId});
         
@@ -44,7 +52,6 @@ export default function ProductDetail(props) {
         }
         
         return (
-            
             <div className="product-detail">
                 <ProductView product={product}
                              productId={productId}

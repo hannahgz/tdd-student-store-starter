@@ -3,7 +3,12 @@ import "./Navbar.css"
 import Logo from "../Logo/Logo"
 
 const navbarTitles = ["Home", "About Us", "Contact Us", "Buy Now"]
-let link = ""
+
+/**
+ * 
+ * @returns creates navigation bar that wil autoscroll to various page components 
+ * renders logo in homepage
+ */
 export default function Navbar() {
   return (
     <nav>

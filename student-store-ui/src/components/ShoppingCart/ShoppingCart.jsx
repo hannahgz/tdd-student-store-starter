@@ -1,10 +1,16 @@
 import * as React from "react"
 import "./ShoppingCart.css"
 
+
+/**
+ * 
+ * @param {*} param0 
+ * @returns Displays list of all products, quantities, as well as their respective prices
+ * Prices rounded to exactly 2 decimal places
+ */
 export default function ShoppingCart({isOpen, products, shoppingCart}) {
     let subtotal = 0;
     let taxes = 0;
-    let totalPrice = 0;
     return (
     
       <section className="shopping-cart">
@@ -37,7 +43,7 @@ export default function ShoppingCart({isOpen, products, shoppingCart}) {
         
                     
                     
-                    <div class = "cum-results">
+                    <div className = "cum-results">
                         <div className="receipt">
                             <span className="subtotal">Subtotal</span>
                             <span></span>

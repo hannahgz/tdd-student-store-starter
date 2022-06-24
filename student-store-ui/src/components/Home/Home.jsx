@@ -5,6 +5,11 @@ import Selector from "../Selector/Selector"
 import Hero from "../Hero/Hero"
 import SearchBar from "../SearchBar/SearchBar"
 
+/**
+ * 
+ * @param {*} props 
+ * @returns renders the header, search bar, and product grid
+ */
 export default function Home(props) {
   return (
     <div className="home">

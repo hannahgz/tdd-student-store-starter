@@ -2,6 +2,11 @@ import * as React from "react"
 import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 
+/**
+ * 
+ * @param {*} props 
+ * @returns Iterates over all products and displays their respective product card
+ */
 export default function ProductGrid(props) {
     let foundSearch = false;
     return (
@@ -38,6 +43,7 @@ export default function ProductGrid(props) {
                     
                 })
                 }
+                
                 {
                     !foundSearch ? 
                     <div className="none-found">

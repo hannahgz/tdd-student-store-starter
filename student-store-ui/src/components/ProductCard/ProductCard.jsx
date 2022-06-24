@@ -2,6 +2,12 @@ import * as React from "react"
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
 
+/**
+ * 
+ * @param {*} props 
+ * @returns Renders image, name, price, and quantity of product 
+ * Creates buttons that lets users toggle quantity of products
+ */
 export default function ProductCard(props) {
     return (
 

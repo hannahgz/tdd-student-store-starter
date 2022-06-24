@@ -1,6 +1,11 @@
 import "./ProductView.css"
 import ProductCard from "../ProductCard/ProductCard"
 
+/**
+ * 
+ * @param {*} props
+ * @returns Renders product card with product description 
+ */
 export default function ProductView({product, productId, quantity, handleAddItemToCart, handleRemoveItemFromCart, setIsFetching}) {
     return (
       <div className="product-view">
